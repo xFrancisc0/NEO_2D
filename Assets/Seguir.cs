@@ -15,7 +15,10 @@ public class Seguir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         this.transform.position = new Vector3(objetoASeguir.position.x, objetoASeguir.position.y + 4, objetoASeguir.position.z - distancia);
+
+
         //this.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, objetoASeguir.eulerAngles.y, objetoASeguir.eulerAngles.z);
         //this.transform.LookAt(objetoASeguir);
     }

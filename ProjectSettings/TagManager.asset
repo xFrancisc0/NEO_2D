@@ -10,6 +10,12 @@ TagManager:
   - suelo
   - obstaculo
   - moneda
+  - acelerador
+  - lava
+  - checkpoint_frontal
+  - checkpoint_reverso
+  - acelerador_inverso
+  - checkpoint_meta
   layers:
   - Default
   - TransparentFX
