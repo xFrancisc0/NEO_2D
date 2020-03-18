@@ -27,13 +27,19 @@ public class ControladorPelota : MonoBehaviour
         //Velocidad limitada a un maximo de 10
         if (this.vida > 0 && Mathf.Abs(vel) <= 15 && modo_camara == 1)
         {
-            this.GetComponent<Rigidbody>().AddForce(new Vector3(0, (Input.GetButtonDown("Jump") && esNivelSuelo == true ? fuerzaSalto * 15 : 0f), velocidad * Input.GetAxis("Horizontal")));
+            this.GetComponent<Rigidbody>().AddForce(new Vector3(0, (Input.GetButtonDown("Jump") && esNivelSuelo == true ? fuerzaSalto * 20 : 0f), velocidad * Input.GetAxis("Horizontal")));
         }
 
         if (this.vida > 0 && Mathf.Abs(vel) <= 15 && modo_camara == 2)
         {
-            this.GetComponent<Rigidbody>().AddForce(new Vector3(0, (Input.GetButtonDown("Jump") && esNivelSuelo == true ? fuerzaSalto * 15 : 0f), -velocidad * Input.GetAxis("Horizontal")));
+            this.GetComponent<Rigidbody>().AddForce(new Vector3(0, (Input.GetButtonDown("Jump") && esNivelSuelo == true ? fuerzaSalto * 20 : 0f), -velocidad * Input.GetAxis("Horizontal")));
         }
+
+        if (this.vida > 0 && Mathf.Abs(vel) <= 15 && modo_camara == 3)
+        {
+            this.GetComponent<Rigidbody>().AddForce(new Vector3((-velocidad*Input.GetAxis("Vertical")), (Input.GetButtonDown("Jump") && esNivelSuelo == true ? fuerzaSalto * 20 : 0f), velocidad * Input.GetAxis("Horizontal")));
+        }
+
     }
     public bool esNivelSuelo = true;
 
@@ -112,6 +118,13 @@ public class ControladorPelota : MonoBehaviour
             camara = GameObject.Find("Main_Camera");
             camara.GetComponent<Sigue>().checkpoint = 2;
             modo_camara = 2;
+        }
+
+        if (col.gameObject.tag == "checkpoint_lado")
+        {
+            camara = GameObject.Find("Main_Camera");
+            camara.GetComponent<Sigue>().checkpoint = 3;
+            modo_camara = 3;
         }
 
 

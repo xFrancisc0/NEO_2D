@@ -16,6 +16,9 @@ TagManager:
   - checkpoint_reverso
   - acelerador_inverso
   - checkpoint_meta
+  - checkpoint_lado
+  - proyectil
+  - checkpoint_lado2
   layers:
   - Default
   - TransparentFX

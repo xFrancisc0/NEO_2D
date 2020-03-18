@@ -23,6 +23,7 @@ public class Sigue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(this.checkpoint==1)
         {
             //Si el modo de camara es frontal
@@ -42,6 +43,20 @@ public class Sigue : MonoBehaviour
             this.transform.position = seguido.position - new Vector3(28.60585f, -23.40843f, -17.7179f);
 
             Quaternion target = Quaternion.Euler(28.053f, -231.154f, 0);
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, target, 5.0f);
+
+            vectorDiferencia = seguido.position - this.transform.position;
+
+
+            this.transform.position = seguido.position - vectorDiferencia;
+        }
+        else if (this.checkpoint == 3)
+        {
+            Debug.Log(this.checkpoint);
+            //Si el modo de camara es lateral
+            this.transform.position = seguido.position - new Vector3(-12.07134f, -1.0884f, 0.70648f);
+
+            Quaternion target = Quaternion.Euler(0f, -90f, 0f);
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, target, 5.0f);
 
             vectorDiferencia = seguido.position - this.transform.position;

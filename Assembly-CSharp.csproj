@@ -68,6 +68,7 @@
     <Compile Include="Assets\Moneda.cs" />
     <Compile Include="Assets\Obstaculo.cs" />
     <Compile Include="Assets\Pelota.cs" />
+    <Compile Include="Assets\proyectil.cs" />
     <Compile Include="Assets\Seguir.cs" />
     <Compile Include="Assets\Sigue.cs" />
     <Reference Include="Unity.Timeline.Editor">
