@@ -19,6 +19,7 @@ TagManager:
   - checkpoint_lado
   - proyectil
   - checkpoint_lado2
+  - panel
   layers:
   - Default
   - TransparentFX
